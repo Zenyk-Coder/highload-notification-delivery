@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "monorepo": true,
+  "root": "apps",
+  "projects": {
+    "users": {
+      "type": "application",
+      "root": "apps/users",
+      "sourceRoot": "apps/users/src",
+      "entryFile": "main",
+      "compilerOptions": {
+        "tsConfigPath": "apps/users/tsconfig.app.json"
+      }
+    },
+    "notifications-sceduler": {
+      "type": "application",
+      "root": "apps/notifications-sceduler",
+      "sourceRoot": "apps/notifications-sceduler/src",
+      "entryFile": "main",
+      "compilerOptions": {
+        "tsConfigPath": "apps/notifications-sceduler/tsconfig.app.json"
+      }
+    },
+    "notifications-sender": {
+      "type": "application",
+      "root": "apps/notifications-sender",
+      "sourceRoot": "apps/notifications-sender/src",
+      "entryFile": "main",
+      "compilerOptions": {
+        "tsConfigPath": "apps/notifications-sender/tsconfig.app.json"
+      }
+    }
+  }
+}

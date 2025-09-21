@@ -1,0 +1,20 @@
+config:
+  target: http://localhost:3000
+  phases:
+    - duration: 120 # run for 2 minutes
+      arrivalRate: 15 # 15 requests per second
+      name: Steady 15 rps
+  plugins:
+    metrics-by-endpoint: {}
+    ensure:
+      thresholds:
+        - http.request_rate: 15
+scenarios:
+  - name: Create user @ 15 rps
+    flow:
+      - post:
+          url: '/users'
+          headers:
+            content-type: application/json
+          json:
+            name: 'Test User'
