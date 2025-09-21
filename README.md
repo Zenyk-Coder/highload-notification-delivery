@@ -2,7 +2,6 @@
 
 ## Architecture overview
 
-Place your diagram here:
 ![Architecture](./architecture.jpg)
 
 Services:
