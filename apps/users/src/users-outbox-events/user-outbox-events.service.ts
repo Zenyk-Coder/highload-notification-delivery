@@ -15,8 +15,8 @@ export class UserOutboxEventService {
     private readonly publisher: RabbitPublisher,
   ) {}
 
-  // run every second; you can add adaptive backoff if needed
-  @Cron('*/1 * * * * *') // every second
+  // run every 30 second; you can add adaptive backoff if needed
+  @Cron('*/30 * * * * *')
   async tick() {
     this.log.debug('Outbox tick start');
     const BATCH = Number(process.env.OUTBOX_BATCH ?? 500);

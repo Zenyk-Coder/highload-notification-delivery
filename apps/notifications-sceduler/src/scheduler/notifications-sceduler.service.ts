@@ -16,8 +16,8 @@ export class NotificationsScedulerService {
 
     if (!messageId) throw new Error('messageId is required for idempotency');
 
-    // schedule in 10 minutes
-    const scheduledFor = new Date(Date.now() + 10 * 60 * 1000);
+    // schedule in 24 hours
+    const scheduledFor = new Date(Date.now() + 24 * 60 * 60 * 1000);
     const notificationType = 'notification.push';
     const payload = {
       userId,

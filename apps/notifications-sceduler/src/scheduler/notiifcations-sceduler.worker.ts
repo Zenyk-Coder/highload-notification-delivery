@@ -19,8 +19,8 @@ export class NotificationsScedulerWorkerService {
     private readonly publisher: RabbitMQPublisherService,
   ) {}
 
-  // every 5 seconds
-  @Cron('*/5 * * * * *')
+  // every 30 seconds
+  @Cron('*/30 * * * * *')
   async tick() {
     const BATCH = Number(
       process.env.SCHEDULE_BATCH ?? process.env.OUTBOX_BATCH ?? 500,
